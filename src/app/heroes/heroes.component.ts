@@ -11,7 +11,6 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
 
   public heroes: Hero[];
-  public selectedHero: Hero;
 
   constructor(private heroService: HeroService) {
   }
@@ -22,9 +21,5 @@ export class HeroesComponent implements OnInit {
 
   public getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
-
-  public onSelect(hero: Hero): void {
-    this.selectedHero = hero;
   }
 }
